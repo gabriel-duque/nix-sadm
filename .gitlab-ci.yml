@@ -1,0 +1,13 @@
+---
+
+image: docker.io/nixos/nix
+
+stages:
+  - check
+
+fmt:
+  stage: check
+  script:
+    - nix-channel --update
+    - nix-env -i nixfmt
+    - find -type f -name '*.nix' -exec nixfmt -c {} '+'
