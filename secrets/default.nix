@@ -14,7 +14,7 @@ else {
   };
 
   config.sadm.secrets = {
-    rootHashedPassword = builtins.readFile ./shadow-hash-root;
-    userHashedPassword = builtins.readFile ./shadow-hash-user;
+    rootHashedPassword = fileContents ./shadow-hash-root;
+    userHashedPassword = fileContents ./shadow-hash-user;
   };
 }
