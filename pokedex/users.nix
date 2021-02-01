@@ -1,7 +1,6 @@
-{ ... }:
+{ config, ... }:
 
-let secrets = import ../secrets.nix;
-in {
+with config.sadm; {
   users = {
     mutableUsers = false;
     users = {
